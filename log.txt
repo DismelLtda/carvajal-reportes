@@ -1,0 +1,111 @@
+[root@sip carvajal]# ./manage.sh logs:db
+📋 Logs de postgres:
+carvajal_postgres  | The files belonging to this database system will be owned by user "postgres".
+carvajal_postgres  | This user must also own the server process.
+carvajal_postgres  |
+carvajal_postgres  | The database cluster will be initialized with locale "en_US.utf8".
+carvajal_postgres  | The default database encoding has accordingly been set to "UTF8".
+carvajal_postgres  | The default text search configuration will be set to "english".
+carvajal_postgres  |
+carvajal_postgres  | Data page checksums are disabled.
+carvajal_postgres  |
+carvajal_postgres  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+carvajal_postgres  | creating subdirectories ... ok
+carvajal_postgres  | selecting dynamic shared memory implementation ... posix
+carvajal_postgres  | selecting default max_connections ... 100
+carvajal_postgres  | selecting default shared_buffers ... 128MB
+carvajal_postgres  | selecting default time zone ... UTC
+carvajal_postgres  | creating configuration files ... ok
+carvajal_postgres  | running bootstrap script ... ok
+carvajal_postgres  | sh: locale: not found
+carvajal_postgres  | 2026-03-09 21:17:07.165 UTC [35] WARNING:  no usable system locales were found
+carvajal_postgres  | performing post-bootstrap initialization ... ok
+carvajal_postgres  | initdb: warning: enabling "trust" authentication for local connections
+carvajal_postgres  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+carvajal_postgres  | syncing data to disk ... ok
+carvajal_postgres  |
+carvajal_postgres  |
+carvajal_postgres  | Success. You can now start the database server using:
+carvajal_postgres  |
+carvajal_postgres  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+carvajal_postgres  |
+carvajal_postgres  | waiting for server to start....2026-03-09 21:17:10.182 UTC [41] LOG:  starting PostgreSQL 15.17 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+carvajal_postgres  | 2026-03-09 21:17:10.208 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+carvajal_postgres  | 2026-03-09 21:17:10.285 UTC [44] LOG:  database system was shut down at 2026-03-09 21:17:08 UTC
+carvajal_postgres  | 2026-03-09 21:17:10.311 UTC [41] LOG:  database system is ready to accept connections
+carvajal_postgres  |  done
+carvajal_postgres  | server started
+carvajal_postgres  | 2026-03-09 21:17:10.449 UTC [50] LOG:  statement: SELECT 1 FROM pg_database WHERE datname = 'carvajal_reportes' ;
+carvajal_postgres  | 2026-03-09 21:17:10.451 UTC [50] LOG:  duration: 1.758 ms
+carvajal_postgres  | 2026-03-09 21:17:10.459 UTC [52] LOG:  statement: CREATE DATABASE "carvajal_reportes" ;
+carvajal_postgres  | 2026-03-09 21:17:10.712 UTC [52] LOG:  duration: 252.967 ms
+carvajal_postgres  | CREATE DATABASE
+carvajal_postgres  |
+carvajal_postgres  |
+carvajal_postgres  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-init.sql
+carvajal_postgres  | 2026-03-09 21:17:10.747 UTC [54] LOG:  statement: DO
+carvajal_postgres  |    $do$
+carvajal_postgres  |    BEGIN
+carvajal_postgres  |      IF NOT EXISTS (SELECT 1 FROM pg_user WHERE usename = 'carvajal_user') THEN
+carvajal_postgres  |        CREATE USER carvajal_user WITH PASSWORD 'Carvajal2026Prod789#Secure';
+carvajal_postgres  |        RAISE NOTICE 'Usuario carvajal_user creado';
+carvajal_postgres  |      ELSE
+carvajal_postgres  |        RAISE NOTICE 'Usuario carvajal_user ya existe';
+carvajal_postgres  |      END IF;
+carvajal_postgres  |    END
+carvajal_postgres  |    $do$;
+carvajal_postgres  | psql:/docker-entrypoint-initdb.d/01-init.sql:20: NOTICE:  Usuario carvajal_user ya existe
+carvajal_postgres  | 2026-03-09 21:17:10.752 UTC [54] LOG:  duration: 5.023 ms
+carvajal_postgres  | DO
+carvajal_postgres  | 2026-03-09 21:17:10.752 UTC [54] LOG:  statement: DO
+carvajal_postgres  |    $do$
+carvajal_postgres  |    BEGIN
+carvajal_postgres  |      IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'carvajal_reportes') THEN
+carvajal_postgres  |        CREATE DATABASE carvajal_reportes OWNER carvajal_user;
+carvajal_postgres  |        RAISE NOTICE 'Base de datos carvajal_reportes creada';
+carvajal_postgres  |      ELSE
+carvajal_postgres  |        RAISE NOTICE 'Base de datos carvajal_reportes ya existe';
+carvajal_postgres  |      END IF;
+carvajal_postgres  |    END
+carvajal_postgres  |    $do$;
+carvajal_postgres  | psql:/docker-entrypoint-initdb.d/01-init.sql:35: NOTICE:  Base de datos carvajal_reportes ya existe
+carvajal_postgres  | 2026-03-09 21:17:10.752 UTC [54] LOG:  duration: 0.458 ms
+carvajal_postgres  | DO
+carvajal_postgres  | 2026-03-09 21:17:10.752 UTC [54] LOG:  statement: GRANT CONNECT ON DATABASE carvajal_reportes TO carvajal_user;
+carvajal_postgres  | 2026-03-09 21:17:10.798 UTC [54] LOG:  duration: 45.941 ms
+carvajal_postgres  | GRANT
+carvajal_postgres  | 2026-03-09 21:17:10.798 UTC [54] LOG:  statement: GRANT USAGE ON SCHEMA public TO carvajal_user;
+carvajal_postgres  | 2026-03-09 21:17:10.810 UTC [54] LOG:  duration: 11.961 ms
+carvajal_postgres  | GRANT
+carvajal_postgres  | 2026-03-09 21:17:10.811 UTC [54] LOG:  statement: GRANT CREATE ON SCHEMA public TO carvajal_user;
+carvajal_postgres  | 2026-03-09 21:17:10.822 UTC [54] LOG:  duration: 11.974 ms
+carvajal_postgres  | GRANT
+carvajal_postgres  | 2026-03-09 21:17:10.823 UTC [54] ERROR:  syntax error at or near "RAISE" at character 1
+carvajal_postgres  | psql:/docker-entrypoint-initdb.d/01-init.sql:48: ERROR:  syntax error at or near "RAISE"
+carvajal_postgres  | 2026-03-09 21:17:10.823 UTC [54] STATEMENT:  RAISE NOTICE '✅ Inicialización completada';
+carvajal_postgres  | LINE 1: RAISE NOTICE '✅ Inicialización completada';
+carvajal_postgres  |         ^
+carvajal_postgres  |
+carvajal_postgres  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+carvajal_postgres  |
+carvajal_postgres  | 2026-03-09 21:17:13.043 UTC [1] LOG:  starting PostgreSQL 15.17 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+carvajal_postgres  | 2026-03-09 21:17:13.043 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+carvajal_postgres  | 2026-03-09 21:17:13.043 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+carvajal_postgres  | 2026-03-09 21:17:13.094 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+carvajal_postgres  | 2026-03-09 21:17:13.144 UTC [29] LOG:  database system was interrupted; last known up at 2026-03-09 21:17:10 UTC
+carvajal_postgres  | 2026-03-09 21:17:13.549 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+carvajal_postgres  | 2026-03-09 21:17:13.578 UTC [29] LOG:  redo starts at 0/1509928
+carvajal_postgres  | 2026-03-09 21:17:13.646 UTC [29] LOG:  invalid record length at 0/192D6F0: wanted 24, got 0
+carvajal_postgres  | 2026-03-09 21:17:13.646 UTC [29] LOG:  redo done at 0/192D698 system usage: CPU: user: 0.01 s, system: 0.00 s, elapsed: 0.06 s
+carvajal_postgres  | 2026-03-09 21:17:13.698 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+carvajal_postgres  | 2026-03-09 21:17:14.613 UTC [27] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.297 s, sync=0.474 s, total=0.940 s; sync files=301, longest=0.295 s, average=0.002 s; distance=4239 kB, estimate=4239 kB
+carvajal_postgres  | 2026-03-09 21:17:14.642 UTC [1] LOG:  database system is ready to accept connections
+carvajal_postgres  | 2026-03-09 21:17:23.073 UTC [41] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:17:33.157 UTC [51] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:17:43.233 UTC [60] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:17:53.293 UTC [69] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:18:03.379 UTC [78] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:18:13.442 UTC [88] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:18:23.536 UTC [97] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:18:33.615 UTC [106] FATAL:  database "carvajal_user" does not exist
+carvajal_postgres  | 2026-03-09 21:18:43.712 UTC [115] FATAL:  database "carvajal_user" does not exist

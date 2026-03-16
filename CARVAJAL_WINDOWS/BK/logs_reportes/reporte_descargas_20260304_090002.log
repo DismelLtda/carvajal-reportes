@@ -1,0 +1,57 @@
+2026-03-04 09:00:02,654 - INFO - ======================================================================
+2026-03-04 09:00:02,655 - INFO - INICIO DE SESIÓN - 04/03/2026 09:00:02
+2026-03-04 09:00:02,655 - INFO - ======================================================================
+2026-03-04 09:00:03,195 - INFO - Iniciando Playwright...
+2026-03-04 09:00:03,369 - INFO - Navegador (Chromium) lanzado en modo oculto
+2026-03-04 09:00:03,725 - INFO - Navegando a: https://cencarvajal.com/#/portal/login
+2026-03-04 09:00:08,293 - INFO - [Intento 1/3] Intentando login…
+2026-03-04 09:00:10,684 - INFO - [Intento 1] Formulario de login enviado
+2026-03-04 09:00:20,691 - WARNING - [Intento 1] No apareció 'Tus servicios' después de intentar login (posible modal)
+2026-03-04 09:00:20,726 - INFO - [Intento 1] Se hizo clic en botón 'Continuar' del modal
+2026-03-04 09:00:27,729 - WARNING - [Intento 1] Aún no aparece 'Tus servicios' tras aceptar modal
+2026-03-04 09:00:27,729 - INFO - [Intento 1] Navegando de nuevo a login y reintentando...
+2026-03-04 09:00:27,739 - INFO - [Intento 1] Página de login cargada nuevamente
+2026-03-04 09:00:27,739 - INFO - [Intento 2/3] Intentando login…
+2026-03-04 09:00:27,794 - INFO - [Intento 2] Formulario de login enviado
+2026-03-04 09:00:30,145 - INFO - [Intento 2] [OK] Login exitoso - texto 'Tus servicios' encontrado
+2026-03-04 09:00:30,145 - INFO - [Intento 2] Esperando que la página se cargue completamente...
+2026-03-04 09:00:32,145 - INFO - [Intento 2] Página estabilizada, listo para descargar
+2026-03-04 09:00:32,146 - INFO - ======================================================================
+2026-03-04 09:00:32,146 - INFO - [*] Iniciando descarga de Reportes VENTAS
+2026-03-04 09:00:32,146 - INFO - ======================================================================
+2026-03-04 09:00:32,146 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=SLSRPT
+2026-03-04 09:00:32,172 - INFO - Esperando que Angular cargue...
+2026-03-04 09:00:35,702 - INFO - ✓ Formulario de filtros cargado
+2026-03-04 09:00:37,703 - INFO - Configurando filtro de fechas: 03/03/2026 a 04/03/2026
+2026-03-04 09:00:37,733 - INFO - Campo 'Fecha inicio' rellenado: 03/03/2026
+2026-03-04 09:00:38,270 - INFO - Campo 'Fecha fin' rellenado: 04/03/2026
+2026-03-04 09:00:39,778 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-04 09:00:39,778 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-04 09:00:39,820 - INFO - ✓ Búsqueda completada y tabla cargada
+2026-03-04 09:00:41,826 - INFO - ✓ Se encontraron 2 registro(s)
+2026-03-04 09:00:41,826 - INFO - 📄 Procesando página 1...
+2026-03-04 09:00:41,831 - INFO -   -> 2 fila(s) en esta página
+2026-03-04 09:00:41,855 - INFO - Fila 1: Iniciando descarga - Dismel Ltda | SUPERTIENDAS Y DROGUERIAS OLIMPICAS
+2026-03-04 09:00:41,889 - INFO - Fila 1: Modal de formato abierto, esperando selección...
+2026-03-04 09:00:42,926 - INFO - Fila 1: Formato XLSX seleccionado
+2026-03-04 09:00:43,940 - INFO - Fila 1: Botón Descargar encontrado
+2026-03-04 09:00:44,462 - INFO - Fila 1: Descargando archivo...
+2026-03-04 09:00:50,261 - INFO - Fila 1: [OK] Descargado exitosamente: VENTAS_PAGE1_FILA1_20260304_090050.xlsx
+2026-03-04 09:00:51,285 - INFO - Fila 2: Iniciando descarga - Dismel Ltda | SUPERTIENDAS Y DROGUERIAS OLIMPICAS
+2026-03-04 09:00:51,320 - INFO - Fila 2: Modal de formato abierto, esperando selección...
+2026-03-04 09:00:52,358 - INFO - Fila 2: Formato XLSX seleccionado
+2026-03-04 09:00:53,372 - INFO - Fila 2: Botón Descargar encontrado
+2026-03-04 09:00:53,893 - INFO - Fila 2: Descargando archivo...
+2026-03-04 09:00:56,628 - INFO - Fila 2: [OK] Descargado exitosamente: VENTAS_PAGE1_FILA2_20260304_090056.xlsx
+2026-03-04 09:00:57,643 - INFO - No hay página siguiente. Fin de paginación.
+2026-03-04 09:00:57,643 - INFO - ======================================================================
+2026-03-04 09:00:57,644 - INFO - [OK] Proceso completado
+2026-03-04 09:00:57,644 - INFO - [REPORT] Total de descargas: 2 archivo(s)
+2026-03-04 09:00:57,644 - INFO - 📁 Ubicación: D:\TAREAS\CARVAJAL\descargas_reportes
+2026-03-04 09:00:57,644 - INFO - [LOG] Logs guardados en: logs_reportes\reporte_descargas_20260304_090002.log
+2026-03-04 09:00:57,644 - INFO - ======================================================================
+2026-03-04 09:00:57,644 - INFO - ✅ Descarga de reportes de ventas completada exitosamente
+2026-03-04 09:00:57,794 - INFO - 
+[OK] Navegador cerrado. Proceso finalizado correctamente
+2026-03-04 09:00:57,794 - INFO - [LOG] Archivo de log: logs_reportes\reporte_descargas_20260304_090002.log
+2026-03-04 09:00:57,794 - INFO - ======================================================================

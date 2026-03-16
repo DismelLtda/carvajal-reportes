@@ -1,0 +1,29 @@
+2026-03-06 18:10:01,699 - INFO - ======================================================================
+2026-03-06 18:10:01,699 - INFO - INICIO DE SINCRONIZACIÓN - 06/03/2026 18:10:01
+2026-03-06 18:10:01,699 - INFO - ======================================================================
+2026-03-06 18:10:01,699 - INFO - 🔗 Conectando a 192.168.1.254:22...
+2026-03-06 18:10:01,713 - INFO - Connected (version 2.0, client OpenSSH_8.0)
+2026-03-06 18:10:01,786 - INFO - Authentication (password) successful!
+2026-03-06 18:10:02,490 - INFO - [chan 0] Opened sftp connection (server version 3)
+2026-03-06 18:10:02,490 - INFO - ✅ Conectado a 192.168.1.254
+2026-03-06 18:10:02,494 - INFO - 📁 Archivos locales encontrados: 8
+2026-03-06 18:10:02,494 - INFO - 📁 Archivos remotos existentes: 4
+2026-03-06 18:10:02,494 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_164548.xlsx
+2026-03-06 18:10:02,495 - INFO - 📤 Subiendo: INVENTARIO_PAGE1_FILA1_20260306_180112.xlsx
+2026-03-06 18:10:02,566 - INFO - ✅ Subido correctamente: INVENTARIO_PAGE1_FILA1_20260306_180112.xlsx
+2026-03-06 18:10:02,566 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_164554.xlsx
+2026-03-06 18:10:02,567 - INFO - 📤 Subiendo: INVENTARIO_PAGE1_FILA2_20260306_180118.xlsx
+2026-03-06 18:10:02,638 - INFO - ✅ Subido correctamente: INVENTARIO_PAGE1_FILA2_20260306_180118.xlsx
+2026-03-06 18:10:02,638 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_164525.xlsx
+2026-03-06 18:10:02,639 - INFO - 📤 Subiendo: VENTAS_PAGE1_FILA1_20260306_180050.xlsx
+2026-03-06 18:10:02,656 - INFO - ✅ Subido correctamente: VENTAS_PAGE1_FILA1_20260306_180050.xlsx
+2026-03-06 18:10:02,656 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_164532.xlsx
+2026-03-06 18:10:02,656 - INFO - 📤 Subiendo: VENTAS_PAGE1_FILA2_20260306_180056.xlsx
+2026-03-06 18:10:02,671 - INFO - ✅ Subido correctamente: VENTAS_PAGE1_FILA2_20260306_180056.xlsx
+2026-03-06 18:10:02,672 - INFO - ======================================================================
+2026-03-06 18:10:02,672 - INFO - SINCRONIZACIÓN COMPLETADA:
+2026-03-06 18:10:02,672 - INFO -   ✅ Sincronizados: 4
+2026-03-06 18:10:02,672 - INFO -   ❌ Errores: 0
+2026-03-06 18:10:02,672 - INFO - ======================================================================
+2026-03-06 18:10:02,672 - INFO - [chan 0] sftp session closed.
+2026-03-06 18:10:02,672 - INFO - ✅ Desconectado del servidor

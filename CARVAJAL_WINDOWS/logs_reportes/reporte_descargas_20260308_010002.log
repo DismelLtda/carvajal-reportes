@@ -1,0 +1,48 @@
+2026-03-08 01:00:02,009 - INFO - ======================================================================
+2026-03-08 01:00:02,010 - INFO - INICIO DE SESIÓN - 08/03/2026 01:00:02
+2026-03-08 01:00:02,010 - INFO - ======================================================================
+2026-03-08 01:00:02,552 - INFO - Iniciando Playwright...
+2026-03-08 01:00:02,731 - INFO - Navegador (Chromium) lanzado en modo visible
+2026-03-08 01:00:03,102 - INFO - Navegando a: https://cencarvajal.com/#/portal/login
+2026-03-08 01:00:07,868 - INFO - [Intento 1/3] Intentando login…
+2026-03-08 01:00:10,446 - INFO - [Intento 1] Formulario de login enviado
+2026-03-08 01:00:20,449 - WARNING - [Intento 1] No apareció 'Tus servicios' después de intentar login (posible modal)
+2026-03-08 01:00:20,465 - INFO - [Intento 1] Se hizo clic en botón 'Continuar' del modal
+2026-03-08 01:00:27,466 - WARNING - [Intento 1] Aún no aparece 'Tus servicios' tras aceptar modal
+2026-03-08 01:00:27,466 - INFO - [Intento 1] Navegando de nuevo a login y reintentando...
+2026-03-08 01:00:27,476 - INFO - [Intento 1] Página de login cargada nuevamente
+2026-03-08 01:00:27,476 - INFO - [Intento 2/3] Intentando login…
+2026-03-08 01:00:27,538 - INFO - [Intento 2] Formulario de login enviado
+2026-03-08 01:00:32,392 - INFO - [Intento 2] [OK] Login exitoso - texto 'Tus servicios' encontrado
+2026-03-08 01:00:32,392 - INFO - [Intento 2] Esperando que la página se cargue completamente...
+2026-03-08 01:00:34,393 - INFO - [Intento 2] Página estabilizada, listo para descargar
+2026-03-08 01:00:34,393 - INFO - ======================================================================
+2026-03-08 01:00:34,393 - INFO - [*] Iniciando descarga de Reportes VENTAS
+2026-03-08 01:00:34,393 - INFO - ======================================================================
+2026-03-08 01:00:34,393 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=SLSRPT
+2026-03-08 01:00:34,423 - INFO - Esperando que Angular cargue...
+2026-03-08 01:00:37,956 - INFO - ✓ Formulario de filtros cargado
+2026-03-08 01:00:39,957 - INFO - Configurando filtro de fechas: 07/03/2026 a 08/03/2026
+2026-03-08 01:00:39,986 - INFO - Campo 'Fecha inicio' rellenado: 07/03/2026
+2026-03-08 01:00:40,526 - INFO - Campo 'Fecha fin' rellenado: 08/03/2026
+2026-03-08 01:00:42,036 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-08 01:00:42,036 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-08 01:01:12,042 - WARNING - ⚠ No se encontraron registros en la búsqueda
+2026-03-08 01:01:12,042 - INFO - ✅ Descarga de reportes de VENTAS completada exitosamente
+2026-03-08 01:01:12,043 - INFO - ======================================================================
+2026-03-08 01:01:12,043 - INFO - [*] Iniciando descarga de Reportes INVENTARIO
+2026-03-08 01:01:12,043 - INFO - ======================================================================
+2026-03-08 01:01:12,043 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=INVRPT
+2026-03-08 01:01:12,046 - INFO - Esperando que Angular cargue...
+2026-03-08 01:01:15,364 - INFO - ✓ Formulario de filtros cargado
+2026-03-08 01:01:17,365 - INFO - Configurando filtro de fechas: 07/03/2026 a 08/03/2026
+2026-03-08 01:01:17,384 - INFO - Campo 'Fecha inicio' rellenado: 07/03/2026
+2026-03-08 01:01:17,916 - INFO - Campo 'Fecha fin' rellenado: 08/03/2026
+2026-03-08 01:01:19,494 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-08 01:01:19,494 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-08 01:01:49,500 - WARNING - ⚠ No se encontraron registros en la búsqueda
+2026-03-08 01:01:49,500 - INFO - ✅ Descarga de reportes de INVENTARIO completada exitosamente
+2026-03-08 01:01:49,680 - INFO - 
+[OK] Navegador cerrado. Proceso finalizado correctamente
+2026-03-08 01:01:49,680 - INFO - [LOG] Archivo de log: logs_reportes\reporte_descargas_20260308_010002.log
+2026-03-08 01:01:49,680 - INFO - ======================================================================

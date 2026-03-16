@@ -1,0 +1,44 @@
+2026-03-02 10:35:47,530 - INFO - ======================================================================
+2026-03-02 10:35:47,530 - INFO - INICIO DE SESIÓN - 02/03/2026 10:35:47
+2026-03-02 10:35:47,530 - INFO - ======================================================================
+2026-03-02 10:35:48,064 - INFO - Iniciando Playwright...
+2026-03-02 10:35:48,792 - INFO - Navegador (Chromium) lanzado en modo visible
+2026-03-02 10:35:50,046 - INFO - Navegando a: https://cencarvajal.com/#/portal/login
+2026-03-02 10:35:55,140 - INFO - [Intento 1/3] Intentando login…
+2026-03-02 10:35:57,553 - INFO - [Intento 1] Formulario de login enviado
+2026-03-02 10:35:59,933 - INFO - [Intento 1] [OK] Login exitoso - texto 'Tus servicios' encontrado
+2026-03-02 10:35:59,934 - INFO - [Intento 1] Esperando que la página se cargue completamente...
+2026-03-02 10:36:01,934 - INFO - [Intento 1] Página estabilizada, listo para descargar
+2026-03-02 10:36:01,934 - INFO - ======================================================================
+2026-03-02 10:36:01,935 - INFO - [*] Iniciando descarga de Reportes VENTAS
+2026-03-02 10:36:01,935 - INFO - ======================================================================
+2026-03-02 10:36:01,936 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=SLSRPT
+2026-03-02 10:36:01,962 - INFO - Esperando que Angular cargue...
+2026-03-02 10:36:05,559 - INFO - ✓ Formulario de filtros cargado
+2026-03-02 10:36:07,560 - INFO - Configurando filtro de fechas: 01/03/2026 a 02/03/2026
+2026-03-02 10:36:07,592 - INFO - Campo 'Fecha inicio' rellenado: 01/03/2026
+2026-03-02 10:36:08,127 - INFO - Campo 'Fecha fin' rellenado: 02/03/2026
+2026-03-02 10:36:09,637 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-02 10:36:09,637 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-02 10:36:09,683 - INFO - ✓ Búsqueda completada y tabla cargada
+2026-03-02 10:36:11,688 - INFO - ✓ Se encontraron 1 registro(s)
+2026-03-02 10:36:11,689 - INFO - 📄 Procesando página 1...
+2026-03-02 10:36:11,693 - INFO -   -> 1 fila(s) en esta página
+2026-03-02 10:36:11,721 - INFO - Fila 1: Iniciando descarga - Dismel Ltda | SUPERTIENDAS Y DROGUERIAS OLIMPICAS
+2026-03-02 10:36:11,777 - INFO - Fila 1: Modal de formato abierto, esperando selección...
+2026-03-02 10:36:12,807 - INFO - Fila 1: Formato XLSX seleccionado
+2026-03-02 10:36:13,822 - INFO - Fila 1: Botón Descargar encontrado
+2026-03-02 10:36:14,341 - INFO - Fila 1: Descargando archivo...
+2026-03-02 10:36:20,179 - INFO - Fila 1: [OK] Descargado exitosamente: VENTAS_PAGE1_FILA1_20260302_103620.xlsx
+2026-03-02 10:36:21,194 - INFO - No hay página siguiente. Fin de paginación.
+2026-03-02 10:36:21,195 - INFO - ======================================================================
+2026-03-02 10:36:21,195 - INFO - [OK] Proceso completado
+2026-03-02 10:36:21,196 - INFO - [REPORT] Total de descargas: 1 archivo(s)
+2026-03-02 10:36:21,196 - INFO - 📁 Ubicación: D:\TAREAS\CARVAJAL\descargas_reportes
+2026-03-02 10:36:21,196 - INFO - [LOG] Logs guardados en: logs_reportes\reporte_descargas_20260302_103547.log
+2026-03-02 10:36:21,196 - INFO - ======================================================================
+2026-03-02 10:36:21,196 - INFO - ✅ Descarga de reportes de ventas completada exitosamente
+2026-03-02 10:36:21,391 - INFO - 
+[OK] Navegador cerrado. Proceso finalizado correctamente
+2026-03-02 10:36:21,391 - INFO - [LOG] Archivo de log: logs_reportes\reporte_descargas_20260302_103547.log
+2026-03-02 10:36:21,392 - INFO - ======================================================================

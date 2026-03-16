@@ -1,0 +1,173 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   CARVAJAL VENTAS - CONFIGURACIÓN DOCKER                   ║
+║                           🐳 PRODUCCIÓN LISTA 🐳                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 ARCHIVOS CREADOS:
+
+  ✅ docker-compose.yml      → Configuración completa (PostgreSQL + App)
+  ✅ Dockerfile              → Imagen Docker para la aplicación
+  ✅ .env.docker             → Variables de entorno para Docker
+  ✅ DOCKER.md               → Documentación completa de Docker
+  ✅ docker-help.sh          → Script helper con comandos útiles
+  ✅ .gitignore              → Ignora archivos sensibles en Git
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🚀 INICIO RÁPIDO (5 MINUTOS)
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  COPIAR Y CONFIGURAR VARIABLES
+
+    # Copiar template
+    cp .env.docker .env.docker.prod
+
+    # EDITAR CON TUS CREDENCIALES REALES
+    nano .env.docker.prod
+
+    Variables críticas:
+    ├─ POSTGRES_PASSWORD (cambiar de valor por defecto)
+    ├─ USUARIO_PORTAL (tu usuario del portal Cencarvajal)
+    ├─ CONTRASENA_PORTAL (tu contraseña del portal)
+    ├─ CORREO_REMITENTE (email para notificaciones)
+    ├─ PASSWORD_CORREO (contraseña del correo)
+    └─ CORREO_DESTINATARIO (email destino para alertas)
+
+
+2️⃣  INICIAR SERVICIOS
+
+    # Opción A: Con Docker Compose directamente
+    docker-compose --env-file .env.docker.prod up -d
+
+    # Opción B: Usar el script helper (más fácil)
+    chmod +x docker-help.sh
+    ./docker-help.sh up
+
+
+3️⃣  VERIFICAR QUE ESTÁ FUNCIONANDO
+
+    # Ver estado
+    ./docker-help.sh status
+    
+    # O manualmente
+    curl http://localhost:10000/health
+
+
+4️⃣  FIN - Sistema listo en producción
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📚 COMANDOS MÁS ÚTILES
+═══════════════════════════════════════════════════════════════════════════════
+
+USANDO DOCKER-HELP.SH (RECOMENDADO):
+
+  ./docker-help.sh up              → Iniciar servicios
+  ./docker-help.sh down            → Detener servicios
+  ./docker-help.sh restart         → Reiniciar
+  ./docker-help.sh status          → Ver estado + health checks
+  ./docker-help.sh logs            → Ver todos los logs
+  ./docker-help.sh logs-app        → Ver logs de la aplicación
+  ./docker-help.sh logs-db         → Ver logs de PostgreSQL
+  ./docker-help.sh shell-app       → Terminal dentro del contenedor app
+  ./docker-help.sh shell-db        → PostgreSQL CLI interactivo
+  ./docker-help.sh backup          → Hacer backup de BD
+  ./docker-help.sh restore file    → Restaurar backup
+  ./docker-help.sh test            → Pruebas de conectividad
+  ./docker-help.sh help            → Ver todas las opciones
+
+
+USANDO DOCKER COMPOSE DIRECTAMENTE:
+
+  docker-compose ps                         → Estado de servicios
+  docker-compose logs -f                    → Todos los logs
+  docker-compose exec app python main.py    → Ejecutar descarga
+  docker-compose exec app python main.py inventario  → Solo inventario
+  docker-compose restart                    → Reiniciar todo
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🗁️  ESTRUCTURA DE DATOS (VOLÚMENES PERSISTENTES)
+═══════════════════════════════════════════════════════════════════════════════
+
+En el HOST (tu máquina):
+
+  descargas_reportes/          ← Descargados del portal
+  procesados_ventas/           ← VENTAS procesados
+  procesados_inventario/       ← INVENTARIO procesados
+  logs_reportes/               ← Logs de ejecución
+  backups/                     ← Backups de BD
+
+En Docker:
+
+  postgres_data/               ← Base de datos PostgreSQL (volumen)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+⚙️  CONFIGURACIÓN IMPORTANTES
+═══════════════════════════════════════════════════════════════════════════════
+
+PostgreSQL:
+  • Host: postgres (dentro de Docker) / localhost (desde host)
+  • Puerto: 5432
+  • Usuario: carvajal_user (por defecto)
+  • BD: carvajal_reportes
+  • ⚠️ CAMBIAR PASSWORD antes de producción
+
+Aplicación:
+  • URL: http://localhost:8000
+  • Swagger UI: http://localhost:8000/docs
+  • Health check: http://localhost:8000/health
+  • Timezone: America/Bogota
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🔒 SEGURIDAD - CHECKLIST ANTES DE PRODUCCIÓN
+═══════════════════════════════════════════════════════════════════════════════
+
+Antes de deplorar:
+
+  ☐ CAMBIAR todas las contraseñas en .env.docker.prod
+  ☐ Usar contraseña FUERTE para POSTGRES_PASSWORD (20+ caracteres)
+  ☐ Usar contraseña de aplicación para CORREO (no contraseña real de email)
+  ☐ Limitar acceso al puerto 5432 (no exponerlo públicamente)
+  ☐ Hacer backup de la BD regularmente
+  ☐ Revisar logs regularmente
+  ☐ Configurar firewall para permitir solo puertos necesarios (8000, 5432 solo local)
+  ☐ No commitar .env.docker.prod a Git
+  ☐ Usar HTTPS en producción (usar reverse proxy como Nginx)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🆘 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+Problema: PostgreSQL no inicia
+  Solución: docker-compose down -v && docker-compose up -d
+
+Problema: API no conecta a BD
+  Solución: docker-compose logs app | grep DATABASE
+
+Problema: Puerto 5432 ya en uso
+  Solución: Cambiar POSTGRES_PORT en docker-compose.yml o .env
+
+Problema: Contenedores salen después de iniciar
+  Solución: docker-compose logs (revisar errores)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📞 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Leer DOCKER.md para documentación completa
+2. Ejecutar: ./docker-help.sh up
+3. Verificar: ./docker-help.sh status
+4. Probar API: curl http://localhost:8000/health
+5. Revisar logs: ./docker-help.sh logs-app
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                                    ¡Listo para producción! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

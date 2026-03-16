@@ -1,0 +1,318 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║             CHECKLIST - DESPLIEGUE EN ROCKY LINUX (DOCKER)                 ║
+║                   CARVAJAL VENTAS - PRODUCCIÓN                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+✅ PRE-DESPLIEGUE - VERIFICACIÓN COMPLETADA
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 ARCHIVOS Y CONFIGURACIÓN:
+
+  ✅ Dockerfile
+     - Base: Python 3.11 Alpine (ligero ~100MB)
+     - Dependencias: curl, postgresql-client, gcc, musl-dev, libpq-dev
+     - Health check: configurado en puerto 10000
+     - Directorios internos: creados automáticamente
+     
+  ✅ docker-compose.yml
+     - Version: 3.8 (compatible con Rocky Linux)
+     - servicios: PostgreSQL 15 Alpine + FastAPI App
+     - Volúmenes: postgres_data (persistencia BD)
+     - Red: carvajal_network
+     - Health checks: ambos servicios configurados
+     
+  ✅ requirements.txt
+     - 45 paquetes verificados
+     - FastAPI 0.104.1 + Uvicorn 0.24.0 (API)
+     - SQLAlchemy 2.0.23 + psycopg2-binary (PostgreSQL)
+     - openpyxl 3.11.0 (Excel parsing)
+     - python-dotenv (env config)
+     - Todo listo para producción
+
+  ✅ .env.docker
+     - Variables de entorno actualizadas
+     - API_PORT: 10000 (para Odoo)
+     - DATABASE_TYPE: postgresql
+     - Zonas horarias: America/Bogota
+     - Ready para usar en servidor
+
+  ✅ Código Fuente (src/)
+     ├── config.py (291 líneas) - Configuración centralizada
+     ├── processor/
+     │   ├── detector.py - Detección automática VENTAS/INVENTARIO
+     │   ├── base/excel_parser.py - Parser base abstracto
+     │   ├── ventas/excel_parser_ventas.py - Parser VENTAS
+     │   └── inventario/excel_parser_inventario.py - Parser INVENTARIO
+     ├── models/
+     │   └── schema.py - 7 modelos SQLAlchemy (7 tablas creadas ✅)
+     └── api/
+         └── main.py - API REST con 7 endpoints
+
+  ✅ Scripts de Inicialización
+     ├── init_db.py - Crea todas las tablas (probado ✅)
+     ├── run_api.py - Launcher Uvicorn
+     └── docker-help.sh - Helper de comandos (listo para Rocky)
+
+  ✅ Documentación Completa
+     ├── DOCKER.md - Guía completa
+     ├── DOCKER_QUICKSTART.txt - Guía rápida
+     └── Este archivo: DEPLOYMENT_CHECKLIST.txt
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📦 ARCHIVOS A LLEVAR AL SERVIDOR (ESTRUCTURA COMPLETA)
+═══════════════════════════════════════════════════════════════════════════════
+
+Copia ESTA estructura completa a /opt/carvajal (o donde prefieras):
+
+carvajal/
+├── docker-compose.yml          ← CRÍTICO: Orquestación
+├── Dockerfile                  ← CRÍTICO: Imagen Docker
+├── requirements.txt            ← CRÍTICO: Dependencias Python
+├── .env.docker                 ← CRÍTICO: Variables de entorno
+├── .gitignore                  ← Para Git (opcional)
+│
+├── init_db.py                  ← CRÍTICO: Inicializa BD
+├── run_api.py                  ← CRÍTICO: Launcher API
+├── setup_carpetas.py           ← Crea estructura (ejecutar primero)
+│
+├── docker-help.sh              ← Helper (chmod +x antes de usar)
+├── docker-compose.yml          ← Config ambiente
+│
+├── src/                        ← CRÍTICO: Código fuente
+│   ├── __init__.py
+│   ├── config.py               ← Configuración centralizada
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── main.py             ← API REST endpoints
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── schema.py           ← Modelos SQLAlchemy (7 tablas)
+│   └── processor/
+│       ├── __init__.py
+│       ├── detector.py         ← Detecta tipo VENTAS/INVENTARIO
+│       ├── base/
+│       │   ├── __init__.py
+│       │   └── excel_parser.py ← Parser base abstracto
+│       ├── ventas/
+│       │   ├── __init__.py
+│       │   └── excel_parser_ventas.py
+│       └── inventario/
+│           ├── __init__.py
+│           └── excel_parser_inventario.py
+│
+├── descargas_reportes/         ← Carpeta para reportes descargados
+│   ├── ventas/
+│   └── inventario/
+│
+├── procesados_ventas/          ← Reportes VENTAS procesados
+├── procesados_inventario/      ← Reportes INVENTARIO procesados
+└── logs_reportes/              ← Logs de ejecución
+
+
+═══════════════════════════════════════════════════════════════════════════════
+⚠️  NO LLEVAR AL SERVIDOR (Ignorados por .gitignore):
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ .env (solo llevar .env.docker)
+❌ __pycache__/
+❌ *.pyc
+❌ .vscode/
+❌ .idea/
+❌ .pytest_cache/
+❌ venv/ (se crea automáticamente)
+❌ *.db / *.sqlite (BD se crea en volumen Docker)
+❌ Documentación de desarrollo (PLAN_DESARROLLO.md, etc.)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🚀 PASOS DE DESPLIEGUE EN ROCKY LINUX
+═══════════════════════════════════════════════════════════════════════════════
+
+1️⃣  PREPARAR EL SERVIDOR
+
+    # Instalar Docker (si no está)
+    sudo dnf install -y docker docker-compose
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    
+    # Crear usuario para carvajal (opcional)
+    sudo useradd -m carvajal
+    sudo usermod -aG docker carvajal
+
+
+2️⃣  SUBIR ARCHIVOS
+
+    # Desde tu máquina local, usar SCP o Git
+    scp -r carvajal/ usuario@servidor:/opt/carvajal
+    
+    # O con Git (si tienes repo):
+    cd /opt
+    git clone https://repo/carvajal.git
+
+
+3️⃣  CONFIGURAR EN EL SERVIDOR
+
+    cd /opt/carvajal
+    
+    # Crear .env.docker.prod con credenciales reales
+    cp .env.docker .env.docker.prod
+    nano .env.docker.prod
+    
+    # Editar:
+    # - POSTGRES_PASSWORD (nueva contraseña fuerte)
+    # - USUARIO_PORTAL (credenciales Cencarvajal)
+    # - CONTRASENA_PORTAL
+    # - CORREO_* (configuración de notificaciones)
+
+
+4️⃣  CREAR DIRECTORIOS Y PERMISOS
+
+    mkdir -p descargas_reportes/{ventas,inventario}
+    mkdir -p procesados_ventas procesados_inventario logs_reportes
+    mkdir -p backups
+    
+    chmod 755 descargas_reportes procesados_* logs_reportes backups
+
+
+5️⃣  INICIAR SERVICIOS
+
+    # Opción A: Con docker-compose directamente
+    docker-compose --env-file .env.docker.prod up -d
+    
+    # Opción B: Usar helper (si convertiste docker-help.sh a CRLF → LF)
+    chmod +x docker-help.sh
+    dos2unix docker-help.sh  # Si está en Windows
+    ./docker-help.sh up
+
+
+6️⃣  VERIFICAR ESTADO
+
+    docker-compose ps
+    docker-compose logs -f app
+    
+    # Probar API
+    curl http://localhost:10000/health
+    curl http://localhost:10000/
+
+
+7️⃣  CONFIGURAR FIREWALL (si es necesario)
+
+    sudo firewall-cmd --add-port=10000/tcp --permanent
+    sudo firewall-cmd --reload
+    
+    # O si necesitas BD accesible
+    sudo firewall-cmd --add-port=5432/tcp --permanent  # (Solo local)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📊 ÁRBOL FINAL (Lo que estará en el servidor)
+═══════════════════════════════════════════════════════════════════════════════
+
+/opt/carvajal/
+├── [Config]
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── .env.docker
+│   └── .gitignore
+│
+├── [Scripts Base]
+│   ├── init_db.py
+│   ├── run_api.py
+│   ├── setup_carpetas.py
+│   └── docker-help.sh
+│
+├── [Código Fuente]
+│   └── src/
+│       ├── config.py
+│       ├── api/main.py
+│       ├── models/schema.py
+│       └── processor/
+│           ├── detector.py
+│           ├── base/excel_parser.py
+│           ├── ventas/excel_parser_ventas.py
+│           └── inventario/excel_parser_inventario.py
+│
+├── [Datos y Logs - Volúmenes Docker]
+│   ├── descargas_reportes/
+│   ├── procesados_ventas/
+│   ├── procesados_inventario/
+│   ├── logs_reportes/
+│   └── backups/
+│
+└── [BD - Volumen Docker]
+    └── postgres_data/ (se crea automáticamente)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🔒 SEGURIDAD - ANTES DE DESPLEGAR
+═══════════════════════════════════════════════════════════════════════════════
+
+Checklist de Seguridad:
+
+  ☐ Cambiar todas las contraseñas en .env.docker.prod
+  ☐ POSTGRES_PASSWORD: Usar 20+ caracteres aleatorios
+  ☐ API_PORT: Verificar que sea 10000 (solo localhost accede en docker network)
+  ☐ Revisar .gitignore protege .env.docker.prod
+  ☐ No commitar credenciales reales a Git
+  ☐ Configurar firewall para abrir puerto 10000 solo a Odoo
+  ☐ Hacer primeros backups después de crear BD
+  ☐ Revisar logs regularmente: docker-compose logs app
+  ☐ Configurar rotación de logs (logrotate)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🆘 TROUBLESHOOTING COMÚN EN ROCKY LINUX
+═══════════════════════════════════════════════════════════════════════════════
+
+Problema: docker-compose not found
+  ✅ Rocky Linux 9+: Usar 'docker compose' (sin guión)
+  Solución: Reemplaza 'docker-compose' por 'docker compose' en comandos
+
+Problema: Puerto 10000 en uso
+  Comando:
+  sudo ss -tlnp | grep 10000
+  sudo fuser -k 10000/tcp
+  
+Problema: PostgreSQL no inicia
+  Comando:
+  docker-compose logs postgres
+  docker-compose down -v  (resetea BD)
+  docker-compose up -d
+
+Problema: Permisos de archivos
+  Comando:
+  sudo chown -R carvajal:carvajal /opt/carvajal
+  chmod 755 /opt/carvajal
+  chmod 600 .env.docker.prod
+
+Problema: Rutas no encontradas
+  Verificar:
+  docker-compose exec app env | grep DIR
+  docker-compose exec app ls -la /app/data/
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📞 CONTACTO Y SOPORTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Documentación:
+  - DOCKER.md: Guía completa (60+ comandos)
+  - DOCKER_QUICKSTART.txt: Referencia rápida
+  - README.md: Descripción general del proyecto
+
+Logs:
+  docker-compose logs app      # API
+  docker-compose logs postgres # Base de datos
+  docker-compose logs -f       # En vivo
+
+Soporte: soporte@dismelltda.com
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    🚀 ¡LISTO PARA DESPLEGAR EN PRODUCCIÓN! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

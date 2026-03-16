@@ -1,0 +1,37 @@
+2026-03-06 21:20:02,362 - INFO - ======================================================================
+2026-03-06 21:20:02,363 - INFO - INICIO DE SINCRONIZACIÓN - 06/03/2026 21:20:02
+2026-03-06 21:20:02,363 - INFO - ======================================================================
+2026-03-06 21:20:02,363 - INFO - 🔗 Conectando a 192.168.1.254:22...
+2026-03-06 21:20:02,377 - INFO - Connected (version 2.0, client OpenSSH_8.0)
+2026-03-06 21:20:02,452 - INFO - Authentication (password) successful!
+2026-03-06 21:20:03,039 - INFO - [chan 0] Opened sftp connection (server version 3)
+2026-03-06 21:20:03,039 - INFO - ✅ Conectado a 192.168.1.254
+2026-03-06 21:20:03,044 - INFO - 📁 Archivos locales encontrados: 20
+2026-03-06 21:20:03,044 - INFO - 📁 Archivos remotos existentes: 20
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_164548.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_180112.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_190112.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_200113.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_210112.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_164554.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_180118.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_190119.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_200119.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_210119.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_164525.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_180050.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_190050.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_200050.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_210050.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_164532.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_180056.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_190057.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_200057.xlsx
+2026-03-06 21:20:03,044 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_210056.xlsx
+2026-03-06 21:20:03,044 - INFO - ======================================================================
+2026-03-06 21:20:03,045 - INFO - SINCRONIZACIÓN COMPLETADA:
+2026-03-06 21:20:03,045 - INFO -   ✅ Sincronizados: 0
+2026-03-06 21:20:03,045 - INFO -   ❌ Errores: 0
+2026-03-06 21:20:03,045 - INFO - ======================================================================
+2026-03-06 21:20:03,045 - INFO - [chan 0] sftp session closed.
+2026-03-06 21:20:03,045 - INFO - ✅ Desconectado del servidor

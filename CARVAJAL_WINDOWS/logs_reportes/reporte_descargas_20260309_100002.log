@@ -1,0 +1,80 @@
+2026-03-09 10:00:02,828 - INFO - ======================================================================
+2026-03-09 10:00:02,829 - INFO - INICIO DE SESIÓN - 09/03/2026 10:00:02
+2026-03-09 10:00:02,829 - INFO - ======================================================================
+2026-03-09 10:00:12,535 - INFO - Iniciando Playwright...
+2026-03-09 10:00:29,536 - INFO - Navegador (Chromium) lanzado en modo visible
+2026-03-09 10:00:38,733 - INFO - Navegando a: https://cencarvajal.com/#/portal/login
+2026-03-09 10:01:00,446 - INFO - [Intento 1/3] Intentando login…
+2026-03-09 10:01:01,614 - INFO - [Intento 1] Formulario de login enviado
+2026-03-09 10:01:11,617 - WARNING - [Intento 1] No apareció 'Tus servicios' después de intentar login (posible modal)
+2026-03-09 10:01:11,673 - INFO - [Intento 1] Se hizo clic en botón 'Continuar' del modal
+2026-03-09 10:01:18,674 - WARNING - [Intento 1] Aún no aparece 'Tus servicios' tras aceptar modal
+2026-03-09 10:01:18,674 - INFO - [Intento 1] Navegando de nuevo a login y reintentando...
+2026-03-09 10:01:18,809 - INFO - [Intento 1] Página de login cargada nuevamente
+2026-03-09 10:01:18,810 - INFO - [Intento 2/3] Intentando login…
+2026-03-09 10:01:18,867 - INFO - [Intento 2] Formulario de login enviado
+2026-03-09 10:01:22,279 - INFO - [Intento 2] [OK] Login exitoso - texto 'Tus servicios' encontrado
+2026-03-09 10:01:22,280 - INFO - [Intento 2] Esperando que la página se cargue completamente...
+2026-03-09 10:01:24,281 - INFO - [Intento 2] Página estabilizada, listo para descargar
+2026-03-09 10:01:24,281 - INFO - ======================================================================
+2026-03-09 10:01:24,281 - INFO - [*] Iniciando descarga de Reportes VENTAS
+2026-03-09 10:01:24,281 - INFO - ======================================================================
+2026-03-09 10:01:24,281 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=SLSRPT
+2026-03-09 10:01:24,364 - INFO - Esperando que Angular cargue...
+2026-03-09 10:01:28,831 - INFO - ✓ Formulario de filtros cargado
+2026-03-09 10:01:30,832 - INFO - Configurando filtro de fechas: 08/03/2026 a 09/03/2026
+2026-03-09 10:01:30,885 - INFO - Campo 'Fecha inicio' rellenado: 08/03/2026
+2026-03-09 10:01:31,542 - INFO - Campo 'Fecha fin' rellenado: 09/03/2026
+2026-03-09 10:01:33,053 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-09 10:01:33,053 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-09 10:01:33,092 - INFO - ✓ Búsqueda completada y tabla cargada
+2026-03-09 10:01:35,116 - INFO - ✓ Se encontraron 1 registro(s)
+2026-03-09 10:01:35,116 - INFO - 📄 Procesando página 1...
+2026-03-09 10:01:35,120 - INFO -   -> 1 fila(s) en esta página
+2026-03-09 10:01:35,241 - INFO - Fila 1: Iniciando descarga - Dismel Ltda | SUPERTIENDAS Y DROGUERIAS OLIMPICAS
+2026-03-09 10:01:35,309 - INFO - Fila 1: Modal de formato abierto, esperando selección...
+2026-03-09 10:01:36,349 - INFO - Fila 1: Formato XLSX seleccionado
+2026-03-09 10:01:37,364 - INFO - Fila 1: Botón Descargar encontrado
+2026-03-09 10:01:37,897 - INFO - Fila 1: Descargando archivo...
+2026-03-09 10:01:45,221 - INFO - Fila 1: [OK] Descargado exitosamente: VENTAS_PAGE1_FILA1_20260309_100145.xlsx
+2026-03-09 10:01:46,236 - INFO - No hay página siguiente. Fin de paginación.
+2026-03-09 10:01:46,236 - INFO - ======================================================================
+2026-03-09 10:01:46,236 - INFO - [OK] Proceso completado
+2026-03-09 10:01:46,236 - INFO - [REPORT] Total de descargas: 1 archivo(s)
+2026-03-09 10:01:46,236 - INFO - 📁 Ubicación: D:\TAREAS\CARVAJAL\descargas_reportes
+2026-03-09 10:01:46,236 - INFO - [LOG] Logs guardados en: logs_reportes\reporte_descargas_20260309_100002.log
+2026-03-09 10:01:46,236 - INFO - ======================================================================
+2026-03-09 10:01:46,237 - INFO - ✅ Descarga de reportes de VENTAS completada exitosamente
+2026-03-09 10:01:46,237 - INFO - ======================================================================
+2026-03-09 10:01:46,237 - INFO - [*] Iniciando descarga de Reportes INVENTARIO
+2026-03-09 10:01:46,237 - INFO - ======================================================================
+2026-03-09 10:01:46,237 - INFO - Navegando a: https://cencarvajal.com/receivingadvicenewportal/#/home/consult-service?service=INVRPT
+2026-03-09 10:01:46,240 - INFO - Esperando que Angular cargue...
+2026-03-09 10:01:49,561 - INFO - ✓ Formulario de filtros cargado
+2026-03-09 10:01:51,562 - INFO - Configurando filtro de fechas: 08/03/2026 a 09/03/2026
+2026-03-09 10:01:51,616 - INFO - Campo 'Fecha inicio' rellenado: 08/03/2026
+2026-03-09 10:01:52,147 - INFO - Campo 'Fecha fin' rellenado: 09/03/2026
+2026-03-09 10:01:53,684 - INFO - Calendarios cerrados, filtros de fecha configurados
+2026-03-09 10:01:53,684 - INFO - 🔍 Presionando botón 'Buscar' para obtener el listado...
+2026-03-09 10:01:53,738 - INFO - ✓ Búsqueda completada y tabla cargada
+2026-03-09 10:01:55,743 - INFO - ✓ Se encontraron 1 registro(s)
+2026-03-09 10:01:55,743 - INFO - 📄 Procesando página 1...
+2026-03-09 10:01:55,747 - INFO -   -> 1 fila(s) en esta página
+2026-03-09 10:01:55,771 - INFO - Fila 1: Iniciando descarga - Dismel Ltda | SUPERTIENDAS Y DROGUERIAS OLIMPICAS
+2026-03-09 10:01:55,809 - INFO - Fila 1: Modal de formato abierto, esperando selección...
+2026-03-09 10:01:56,847 - INFO - Fila 1: Formato XLSX seleccionado
+2026-03-09 10:01:57,862 - INFO - Fila 1: Botón Descargar encontrado
+2026-03-09 10:01:58,384 - INFO - Fila 1: Descargando archivo...
+2026-03-09 10:02:01,145 - INFO - Fila 1: [OK] Descargado exitosamente: INVENTARIO_PAGE1_FILA1_20260309_100201.xlsx
+2026-03-09 10:02:02,162 - INFO - No hay página siguiente. Fin de paginación.
+2026-03-09 10:02:02,162 - INFO - ======================================================================
+2026-03-09 10:02:02,162 - INFO - [OK] Proceso completado
+2026-03-09 10:02:02,162 - INFO - [REPORT] Total de descargas: 1 archivo(s)
+2026-03-09 10:02:02,162 - INFO - 📁 Ubicación: D:\TAREAS\CARVAJAL\descargas_reportes
+2026-03-09 10:02:02,163 - INFO - [LOG] Logs guardados en: logs_reportes\reporte_descargas_20260309_100002.log
+2026-03-09 10:02:02,163 - INFO - ======================================================================
+2026-03-09 10:02:02,163 - INFO - ✅ Descarga de reportes de INVENTARIO completada exitosamente
+2026-03-09 10:02:02,747 - INFO - 
+[OK] Navegador cerrado. Proceso finalizado correctamente
+2026-03-09 10:02:02,747 - INFO - [LOG] Archivo de log: logs_reportes\reporte_descargas_20260309_100002.log
+2026-03-09 10:02:02,747 - INFO - ======================================================================

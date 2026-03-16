@@ -1,0 +1,180 @@
+services:
+  # ============================================================================
+  # PostgreSQL Database - Production
+  # ============================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: carvajal_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-carvajal_reportes}
+      POSTGRES_USER: ${POSTGRES_USER:-carvajal_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-C@rvaJ@l2026__+}
+      TZ: UTC
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      # Persistencia de datos en volumen Docker
+      - postgres_data:/var/lib/postgresql/data:Z
+      # Script de inicialización (crea BD y usuario)
+      - ./init-db.sql:/docker-entrypoint-initdb.d/01-init.sql:Z
+      # Backup automático (opcional)
+      - ./backups:/backups:Z
+    healthcheck:
+      # Usar base de datos 'postgres' (que siempre existe) para evitar error FATAL
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -q -d postgres -U ${POSTGRES_USER:-carvajal_user}",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 15s
+    networks:
+      - carvajal_network
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+      - "-c"
+      - "log_duration=on"
+
+  # ============================================================================
+  # Python Application - API REST
+  # ============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: carvajal_app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Base
+      ENVIRONMENT: production
+      DEBUG: "false"
+
+      # Database
+      DATABASE_TYPE: postgresql
+      DATABASE_URL: postgresql://${POSTGRES_USER:-carvajal_user}:${POSTGRES_PASSWORD:-C@rvaJ@l2026__+}@postgres:5432/${POSTGRES_DB:-carvajal_reportes}
+
+      # API
+      API_HOST: 0.0.0.0
+      API_PORT: ${API_PORT:-10000}
+      API_RELOAD: "false"
+
+      # Rutas (apuntan a carpetas específicas por tipo de reporte)
+      DESCARGAS_VENTAS_DIR: /app/data/descargas_ventas
+      DESCARGAS_INVENTARIO_DIR: /app/data/descargas_inventario
+      PROCESADOS_VENTAS_DIR: /app/data/procesados_ventas
+      PROCESADOS_INVENTARIO_DIR: /app/data/procesados_inventario
+      LOGS_DIR: /app/logs
+
+      # Correo (desde .env)
+      CORREO_REMITENTE: ${CORREO_REMITENTE}
+      PASSWORD_CORREO: ${PASSWORD_CORREO}
+      CORREO_DESTINATARIO: ${CORREO_DESTINATARIO}
+
+      # Autenticación Portal (desde .env)
+      USUARIO_PORTAL: ${USUARIO_PORTAL}
+      CONTRASENA_PORTAL: ${CONTRASENA_PORTAL}
+
+      # Zona horaria
+      TZ: America/Bogota
+    ports:
+      - "${API_PORT:-10000}:${API_PORT:-10000}"
+    volumes:
+      # Descargas (carpetas separadas por tipo de reporte)
+      - ./descargas_reportes/ventas:/app/data/descargas_ventas:Z
+      - ./descargas_reportes/inventario:/app/data/descargas_inventario:Z
+      # Procesados
+      - ./procesados_ventas:/app/data/procesados_ventas:Z
+      - ./procesados_inventario:/app/data/procesados_inventario:Z
+      # Logs
+      - ./logs_reportes:/app/logs:Z
+      # Código fuente (para desarrollo, comentar en producción)
+      # - .:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:10000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - carvajal_network
+    command: >
+      sh -c "python init_db.py && 
+             python run_api.py"
+
+  # ============================================================================
+  # Scheduler de Procesamiento - Verifica y procesa nuevos reportes
+  # ============================================================================
+  downloader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: carvajal_downloader
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Base
+      ENVIRONMENT: production
+      DEBUG: "false"
+
+      # Database
+      DATABASE_TYPE: postgresql
+      DATABASE_URL: postgresql://${POSTGRES_USER:-carvajal_user}:${POSTGRES_PASSWORD:-C@rvaJ@l2026__+}@postgres:5432/${POSTGRES_DB:-carvajal_reportes}
+
+      # Rutas (apuntan a carpetas específicas por tipo de reporte)
+      DESCARGAS_VENTAS_DIR: /app/data/descargas_ventas
+      DESCARGAS_INVENTARIO_DIR: /app/data/descargas_inventario
+      PROCESADOS_VENTAS_DIR: /app/data/procesados_ventas
+      PROCESADOS_INVENTARIO_DIR: /app/data/procesados_inventario
+      LOGS_DIR: /app/logs
+
+      # Scheduler
+      INTERVALO_VERIFICACION: ${INTERVALO_VERIFICACION:-10}
+
+      # Correo (notificaciones)
+      CORREO_REMITENTE: ${CORREO_REMITENTE}
+      PASSWORD_CORREO: ${PASSWORD_CORREO}
+      CORREO_DESTINATARIO: ${CORREO_DESTINATARIO}
+
+      # Zona horaria
+      TZ: America/Bogota
+    volumes:
+      # Descargas (carpetas separadas por tipo de reporte)
+      - ./descargas_reportes/ventas:/app/data/descargas_ventas:Z
+      - ./descargas_reportes/inventario:/app/data/descargas_inventario:Z
+      # Procesados
+      - ./procesados_ventas:/app/data/procesados_ventas:Z
+      - ./procesados_inventario:/app/data/procesados_inventario:Z
+      # Logs
+      - ./logs_reportes:/app/logs:Z
+    networks:
+      - carvajal_network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    command: python download_scheduler.py
+
+# ============================================================================
+# Volúmenes Persistentes
+# ============================================================================
+volumes:
+  postgres_data:
+    driver: local
+
+# ============================================================================
+# Red Docker
+# ============================================================================
+networks:
+  carvajal_network:
+    driver: bridge

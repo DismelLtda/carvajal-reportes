@@ -1,0 +1,75 @@
+2026-03-07 09:30:02,739 - INFO - ======================================================================
+2026-03-07 09:30:02,740 - INFO - INICIO DE SINCRONIZACIÓN - 07/03/2026 09:30:02
+2026-03-07 09:30:02,740 - INFO - ======================================================================
+2026-03-07 09:30:02,740 - INFO - 🔗 Conectando a 192.168.1.254:22...
+2026-03-07 09:30:02,754 - INFO - Connected (version 2.0, client OpenSSH_8.0)
+2026-03-07 09:30:02,836 - INFO - Authentication (password) successful!
+2026-03-07 09:30:03,500 - INFO - [chan 0] Opened sftp connection (server version 3)
+2026-03-07 09:30:03,501 - INFO - ✅ Conectado a 192.168.1.254
+2026-03-07 09:30:03,524 - INFO - 📁 Archivos locales encontrados: 58
+2026-03-07 09:30:03,524 - INFO - 📁 Archivos remotos existentes: 58
+2026-03-07 09:30:03,524 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_164548.xlsx
+2026-03-07 09:30:03,524 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_180112.xlsx
+2026-03-07 09:30:03,524 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_190112.xlsx
+2026-03-07 09:30:03,524 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_200113.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_210112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_220115.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260306_230112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_000112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_010112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_020112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_030112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_040112.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_050106.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_060105.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_070106.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_080106.xlsx
+2026-03-07 09:30:03,525 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA1_20260307_090102.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_164554.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_180118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_190119.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_200119.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_210119.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_220122.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260306_230118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260307_000119.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260307_010118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260307_020118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260307_030118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: INVENTARIO_PAGE1_FILA2_20260307_040118.xlsx
+2026-03-07 09:30:03,526 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_164525.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_180050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_190050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_200050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_210050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_220053.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260306_230050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_000050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_010049.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_020050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_030050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_040050.xlsx
+2026-03-07 09:30:03,527 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_050050.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_060050.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_070050.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_080050.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA1_20260307_090046.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_164532.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_180056.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_190057.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_200057.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_210056.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_220059.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260306_230056.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260307_000056.xlsx
+2026-03-07 09:30:03,528 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260307_010056.xlsx
+2026-03-07 09:30:03,529 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260307_020056.xlsx
+2026-03-07 09:30:03,529 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260307_030056.xlsx
+2026-03-07 09:30:03,529 - INFO - ⏭️  Ya existe en servidor: VENTAS_PAGE1_FILA2_20260307_040056.xlsx
+2026-03-07 09:30:03,529 - INFO - ======================================================================
+2026-03-07 09:30:03,529 - INFO - SINCRONIZACIÓN COMPLETADA:
+2026-03-07 09:30:03,529 - INFO -   ✅ Sincronizados: 0
+2026-03-07 09:30:03,529 - INFO -   ❌ Errores: 0
+2026-03-07 09:30:03,529 - INFO - ======================================================================
+2026-03-07 09:30:03,529 - INFO - [chan 0] sftp session closed.
+2026-03-07 09:30:03,529 - INFO - ✅ Desconectado del servidor
